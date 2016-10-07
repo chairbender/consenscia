@@ -26,3 +26,27 @@ With this webapp, I plan to make that magical list. I want to provide a centrali
  * Detailed information about specific papers. What do peer reivewers think? If it's a study, has it been replicated? Overall, how confiedently do scientists believe in the conclusions of the paper? If the paper does not come to any conclusions, how useful is it? Maybe some sort of rating system is in order (like stackoverflow answers).
  * A place for peer-reviewing and evaluating papers.
  * The ability to view all of the papers that pertain to a particular hypothesis.
+
+## Plan
+### Phase I
+Start with minimal features just to get something working.
+ * Users can create accounts
+ * Users can add papers
+ * Papers are just a title, abstract, and link
+ * Users can upvote or downvote papers
+ * Users can view the amount of upvotes or downvotes.
+ 
+Architecture Reqs:
+ * Make it easy to scale
+
+Single page application.
+consider services oriented architecture. "Onion-style"
+ Need to figure out frontend, backend, and DB.
+Frontend:
+ReactJS. Haven't used it but the idea appeals to me.
+
+Backend:
+Java because it's familiar.
+
+DB:
+NoSQL to start with.
