@@ -35,9 +35,6 @@ Start with minimal features just to get something working.
  * Papers are just a title, abstract, and link
  * Users can upvote or downvote papers
  * Users can view the amount of upvotes or downvotes.
- 
-Architecture Reqs:
- * Make it easy to scale
 
 Single page application.
 Start with simple, shortsighted architecture
@@ -46,8 +43,8 @@ ReactJS. Haven't used it but the idea appeals to me.
 Backend:
 Java because it's familiar. Spring Boot.
 DB:
-NoSQL to start with.
+Decide on MySQL vs some NoSQL approach
 
-For phase 2, consider:
+For phase 2, make it easier to scale:
 consider services oriented architecture. "Onion-style"
 Outer services, firehose, inner services.
