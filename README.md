@@ -40,13 +40,14 @@ Architecture Reqs:
  * Make it easy to scale
 
 Single page application.
-consider services oriented architecture. "Onion-style"
- Need to figure out frontend, backend, and DB.
+Start with simple, shortsighted architecture
 Frontend:
 ReactJS. Haven't used it but the idea appeals to me.
-
 Backend:
 Java because it's familiar.
-
 DB:
 NoSQL to start with.
+
+For future, consider:
+consider services oriented architecture. "Onion-style"
+Outer services, firehose, inner services.
