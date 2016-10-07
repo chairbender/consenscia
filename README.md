@@ -44,7 +44,7 @@ Start with simple, shortsighted architecture
 Frontend:
 ReactJS. Haven't used it but the idea appeals to me.
 Backend:
-Java because it's familiar.
+Java because it's familiar. Spring Boot.
 DB:
 NoSQL to start with.
 
