@@ -48,6 +48,6 @@ Java because it's familiar.
 DB:
 NoSQL to start with.
 
-For future, consider:
+For phase 2, consider:
 consider services oriented architecture. "Onion-style"
 Outer services, firehose, inner services.
