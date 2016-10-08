@@ -39,12 +39,16 @@ Start with minimal features just to get something working.
 Single page application.
 Start with simple, shortsighted architecture
 Frontend:
-ReactJS. Haven't used it but the idea appeals to me.
-Backend:
-Java because it's familiar. Spring Boot.
+ReactJS + Router. JSX. Redux for Flux. Webpack. Typescript. Babel. ES2016+. Fetch. Haven't used it but the idea appeals to me.\
+Webserver:
+Java with Spring Boot. Familiar but I want to learn annotations.
 DB:
-Decide on MySQL vs some NoSQL approach
+MySQL
+
+Build automation:
+Gradle + Gulp.
 
 For phase 2, make it easier to scale:
-consider services oriented architecture. "Onion-style"
+consider services oriented architecture. "Onion-style".
 Outer services, firehose, inner services.
+Use NoSQL only when necessary (probably won't be).
