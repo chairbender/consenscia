@@ -23,7 +23,7 @@ Unfortunately, scientific consensus is not a big, magical list containing everyt
 No, there is no magical list. Instead, there are scientists and papers. Consensus is an emergent phenomenon that arises out of the collective knowledge and interaction of individual scientists. Even when scientists do not explicitly "come to consensus" by holding a big meeting to decide what they think and then telling the press, the building blocks of consensus are still there - peer reivew, replication, conferences, etc... But in order to get at that consensus, we'd need to ask the right scientists what they believe and we'd need to look at the papers and the studies and we'd need to aggregate that information in order to come to an informed conclusion. If you asked any individual scientist what THEY believed, you would not be getting the full picture.
 
 With this webapp, I plan to make that magical list. I want to provide a centralized place that will help you answer questions like the ones mentioned above. I also want to provide a place where consensus-building can take place. I think such a solution would have these basic features:
- * Detailed information about specific papers. What do peer reivewers think? If it's a study, has it been replicated? Overall, how confiedently do scientists believe in the conclusions of the paper? If the paper does not come to any conclusions, how useful is it? Maybe some sort of rating system is in order (like stackoverflow answers).
+ * Detailed information about specific papers. What do peer reivewers think? If it's a study, has it been replicated? Overall, how confidently do scientists believe in the conclusions of the paper? If the paper does not come to any conclusions, how useful is it? Maybe some sort of rating system is in order (like stackoverflow answers).
  * A place for peer-reviewing and evaluating papers.
  * The ability to view all of the papers that pertain to a particular hypothesis.
 
@@ -39,7 +39,7 @@ Start with minimal features just to get something working.
 Single page application.
 Start with simple, shortsighted architecture
 Frontend:
-ReactJS + Router. JSX. Redux for Flux. Webpack. Typescript. Babel. ES2016+. Fetch. Haven't used it but the idea appeals to me.\
+ReactJS + Router. JSX. Redux for Flux. Typescript. Babel. ES2016+. Fetch.
 Webserver:
 Java with Spring Boot. Familiar but I want to learn annotations.
 DB:

@@ -1,4 +1,5 @@
 rootProject.name = 'consensus'
 include 'webservice'
 include 'frontend'
+include 'backend'
 
