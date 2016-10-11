@@ -11,7 +11,10 @@ node {
     download = true
 }
 
-
+/*
+Runs gulp, processing all of the files and putting them in the dest dir, ready
+to be served up or opened in a browser
+ */
 task build(dependsOn: gulp_build) {
 
 }

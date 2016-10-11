@@ -19,7 +19,7 @@ apply plugin: 'liquibase'
 liquibase {
     activities {
         main {
-            changeLogFile 'liquibase/liquibaseDatabaseChangeLog.xml'
+            changeLogFile projectDir.absolutePath + '/liquibase/liquibaseDatabaseChangeLog.xml'
             url 'jdbc:mysql://localhost:3306/consensus'
             username 'consensusUser'
             password 'consensusUser'
@@ -51,7 +51,7 @@ task runInitializeScriptOnDB << {
     def driver = 'com.mysql.jdbc.Driver'
     def sql = Sql.newInstance(url, props, driver)
 
-    String sqlFilePath = "scripts/initialize.sql"
+    String sqlFilePath = projectDir.absolutePath + "/scripts/initialize.sql"
     String sqlString = new File(sqlFilePath).text
     sql.execute(sqlString)
     sql.close()

@@ -1,2 +1,15 @@
-
+evaluationDependsOnChildren()
+/*
+completely re-initialize the database from scratch (drop and re-create it if it exists)
+builds the webservice and the frontend.
+runs the webservice
+*/
+task initializeRun(dependsOn: [
+        project('backend').initializeDB,
+        project('webservice').bootRun,
+        project('frontend').build
+    ]) {
+}
+project('webservice').bootRun.mustRunAfter(project('backend').initializeDB)
+project('frontend').build.mustRunAfter(project('webservice').bootRun)
 
