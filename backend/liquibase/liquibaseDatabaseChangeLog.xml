@@ -8,7 +8,7 @@
 
     <changeSet id="1" author="chairbender">
         <createTable tableName="paper">
-            <column name="id" type="int">
+            <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="title" type="varchar(400)">
@@ -18,5 +18,9 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <insert tableName="paper">
+            <column name="title" value="Power Posing Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance" />
+            <column name="url" value="http://pss.sagepub.com/content/21/10/1363.short" />
+        </insert>
     </changeSet>
 </databaseChangeLog>
