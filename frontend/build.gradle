@@ -13,8 +13,19 @@ node {
 
 /*
 Runs gulp, processing all of the files and putting them in the dest dir, ready
-to be served up or opened in a browser
+to be served up or opened in a browser. Live reloads the files in the connect server.
  */
 task build(dependsOn: gulp_build) {
+
+}
+
+/*
+Starts the gulp connect server
+ */
+task startServer(dependsOn: gulp_connect) {
+
+}
+
+task stopServer(dependsOn: gulp_stopConnect) {
 
 }
