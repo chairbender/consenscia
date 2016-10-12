@@ -1,4 +1,7 @@
-var Parent = React.createClass({
+import React from 'react'
+import Child from './Child.jsx'
+
+module.exports = React.createClass({
   render: function(){
     return (
       <div>
