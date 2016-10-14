@@ -1,9 +1,12 @@
+/*
+See README.md "Running" for info on what tasks to use.
+ */
 buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'mysql', name: 'mysql-connector-java', version: '6.0.4'
+        classpath group: 'mysql', name: 'mysql-connector-java', version: '5.1.40'
     }
 }
 
@@ -56,13 +59,17 @@ task runInitializeScriptOnDB << {
     sql.execute(sqlString)
     sql.close()
 }
-update.dependsOn runInitializeScriptOnDB
 
 /*
 Drops and recreates the "consensus" database, then
 creates all the tables using the liquibase XML.
  */
 task initializeDB(dependsOn: [runInitializeScriptOnDB, update]) {
+
+}
+
+//makes sure the database is up to date, but does not clear it out
+task updateDB(dependsOn: update) {
 
 }
 

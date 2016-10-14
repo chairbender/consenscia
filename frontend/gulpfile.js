@@ -5,14 +5,14 @@ var connect = require('gulp-connect');
 var proxy = require('http-proxy-middleware');
 
 var path = {
+  ALL: ['src/js/*.jsx', 'src/js/**/*.jsx', 'src/index.html'],
   HTML: 'src/index.html',
   DEST_SRC: 'dist/src',
   DEST: 'dist',
   WEBPACK_ENTRY: 'src/js/App.jsx'
 };
 
-gulp.task('connect', ['build'], function () {
-  connect.serverClose();
+gulp.task('startConnect', ['build'], function () {
   connect.server({
     root: 'dist',
     livereload: true,
@@ -30,10 +30,6 @@ gulp.task('connect', ['build'], function () {
   });
 });
 
-gulp.task('stopConnect', function () {
-  connect.serverClose();
-});
-
 gulp.task('transform', function () {
   gulp.src(path.WEBPACK_ENTRY)
     .pipe(webpack(require('./webpack.config.js')))
@@ -48,7 +44,7 @@ gulp.task('copy', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(path.ALL, ['transform', 'copy']);
+  gulp.watch(path.ALL, ['build']);
 });
 
 gulp.task('default', ['watch']);

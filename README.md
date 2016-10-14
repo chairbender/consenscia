@@ -26,9 +26,44 @@ With this webapp, I plan to make that magical list. I want to provide a centrali
  * Detailed information about specific papers. What do peer reivewers think? If it's a study, has it been replicated? Overall, how confidently do scientists believe in the conclusions of the paper? If the paper does not come to any conclusions, how useful is it? Maybe some sort of rating system is in order (like stackoverflow answers).
  * A place for peer-reviewing and evaluating papers.
  * The ability to view all of the papers that pertain to a particular hypothesis.
+ 
+# Dev Instructions
+## Configuring and Initializing Database
+You must have a running MariaDB to point to where you want the data to be stored. It will be stored in a new database
+called consensus. To configure for your environment, simply
+make a copy of template.gradle.properties and rename it gradle.properties, then fill in the blanks.
 
-## Plan
-### Phase I
+Once that has been configured, run the "initializeDB" gradle task. Once you have done this, whenever you want
+to make sure your database is up-to-date with what has been checked in, you can run the "updateDB" task.
+
+This app consists of a frontend server (using gulp-connect) and a separate webservice server using
+spring boot. By default, the frontend runs on port 8080 and the webservice runs on port 3000. You can change those
+by modifying the ports in gulpfile.js and application.properties, respectively.
+
+## Running and Developing
+For development, this app consists of a frontend server (using gulp-connect) and a separate webservice server using
+spring boot. It also consists of a MariaDB.
+
+To initialize your database from scratch (or re-initialize it from scratch), run the "initializeDB" task. 
+To make sure your database is up to date, simply run the "updateDB" task.
+
+### Running servers
+To start the webservice, run the "webserviceRun" task.
+To start the frontend, run the "frontendRun" task.
+Run the "frontendWatch" task so that frontend files will be automatically built and deployed when they are changed.
+
+### Making changes
+As long as you are running "frontendWatch", any frontend changes you make will cause the frontend to be compiled
+and deployed.
+
+Whenever you make webservice changes, running the "buildWebservice" task should cause the server to restart and the
+changes to be applied.
+
+Whenever you make changes to the database, you should make them in liquibaseDatabaseChangelog.xml. You can then apply 
+them using the updateDB task
+
+# Plan
+## Phase I
 Start with minimal features just to get something working.
  * Users can create accounts
  * Users can add papers
@@ -52,3 +87,5 @@ For phase 2, make it easier to scale:
 consider services oriented architecture. "Onion-style".
 Outer services, firehose, inner services.
 Use NoSQL only when necessary (probably won't be).
+
+
