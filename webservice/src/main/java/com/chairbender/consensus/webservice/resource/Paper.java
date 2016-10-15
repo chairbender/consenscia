@@ -4,9 +4,13 @@ package com.chairbender.consensus.webservice.resource;
  * Represents a paper.
  */
 public class Paper {
-    private final long id;
-    private final String title;
-    private final String url;
+    private long id;
+    private String title;
+    private String url;
+
+    public Paper() {
+
+    }
 
     public Paper(long id, String title, String url) {
         this.id = id;
@@ -24,5 +28,17 @@ public class Paper {
 
     public String getUrl() {
         return url;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
