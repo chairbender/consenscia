@@ -62,30 +62,3 @@ changes to be applied.
 Whenever you make changes to the database, you should make them in liquibaseDatabaseChangelog.xml. You can then apply 
 them using the updateDB task
 
-# Plan
-## Phase I
-Start with minimal features just to get something working.
- * Users can create accounts
- * Users can add papers
- * Papers are just a title, abstract, and link
- * Users can upvote or downvote papers
- * Users can view the amount of upvotes or downvotes.
-
-Single page application.
-Start with simple, shortsighted architecture
-Frontend:
-ReactJS + Router. JSX. Redux for Flux. Typescript. Babel. ES2016+. Fetch.
-Webserver:
-Java with Spring Boot. Familiar but I want to learn annotations.
-DB:
-MySQL
-
-Build automation:
-Gradle + Gulp.
-
-For phase 2, make it easier to scale:
-consider services oriented architecture. "Onion-style".
-Outer services, firehose, inner services.
-Use NoSQL only when necessary (probably won't be).
-
-
