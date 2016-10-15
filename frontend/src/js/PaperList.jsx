@@ -3,30 +3,36 @@ import 'fetch';
 
 module.exports = React.createClass({
   getInitialState: function () {
-    //get the list of papers
-    //from the webservice
-    fetch('./api/papers')
-      .then(
-      function (response) {
-        if (response.status !== 200) {
-          console.log('Looks like there was a problem. Status Code: ' +
-            response.status);
-          return;
-        } else {
-          console.log('Looks like there was NOT a problem. Status Code: ' +
-            response.status);
-        }
-      });
-
     return {
-      name: 'Tyler McGinnis'
+      papers: []
     }
   },
+
+  componentDidMount: function() {
+    //get the list of papers
+    //from the webservice
+    fetch('/api/papers')
+    .then(function (response) {
+      return response.json()
+    }).then(function(papers) {
+      this.setState({
+        papers: papers
+      })
+    }.bind(this));
+  },
+
   render: function () {
+    var papersList = this.state.papers.map(function(paper) {
+      return (
+        <ul>
+          <a href={paper.url}>{paper.title}</a>
+        </ul>
+      );
+    });
     return (
-      <div>
-        and this is the <b>{this.props.name}</b>.
-      </div>
+      <li>
+        {papersList}
+      </li>
     )
   }
 });

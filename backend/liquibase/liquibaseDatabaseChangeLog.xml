@@ -22,5 +22,14 @@
             <column name="title" value="Power Posing Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance" />
             <column name="url" value="http://pss.sagepub.com/content/21/10/1363.short" />
         </insert>
+        <insert tableName="paper">
+            <column name="title" value="Neural correlates of interspecies perspective taking in the post-mortem Atlantic Salmon:
+An argument for multiple comparisons correction" />
+            <column name="url" value="http://prefrontal.org/files/posters/Bennett-Salmon-2009.pdf" />
+        </insert>
+        <insert tableName="paper">
+            <column name="title" value="Dynamic interactions of Arabidopsis TEN1: stabilizing telomeres in response to heat stress" />
+            <column name="url" value="http://www.plantcell.org/content/early/2016/09/07/tpc.16.00408" />
+        </insert>
     </changeSet>
 </databaseChangeLog>
