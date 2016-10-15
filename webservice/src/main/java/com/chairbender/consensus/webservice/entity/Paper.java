@@ -1,21 +1,23 @@
-package com.chairbender.consensus.webservice.resource;
+package com.chairbender.consensus.webservice.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
- * Represents a paper.
+ * Represents a single paper.
  */
+@Entity
 public class Paper {
+    @Id
+    @GeneratedValue
     private long id;
+
     private String title;
     private String url;
 
-    public Paper() {
+    Paper() { // jpa only
 
-    }
-
-    public Paper(long id, String title, String url) {
-        this.id = id;
-        this.title = title;
-        this.url = url;
     }
 
     public long getId() {
@@ -36,9 +38,5 @@ public class Paper {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 }

@@ -18,7 +18,7 @@ module.exports = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    fetch('/api/paper/create', {
+    fetch('/api/papers', {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
