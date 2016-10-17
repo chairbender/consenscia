@@ -1,3 +1,4 @@
+var webpack = require("webpack");
 module.exports = {
   entry: "./src/js/App.jsx",
   devtool: 'source-map',
@@ -11,9 +12,23 @@ module.exports = {
         test: /\.jsx?$/,
         loader: "babel-loader"
       },
-      { test: /\.json$/, loader: "json-loader"}
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      },
+      { test: /\.json$/, loader: "json-loader"},
+      {
+        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+        loader: "file"
+      }
     ]
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ],
   node: {
     dns: 'mock',
     net: 'mock'

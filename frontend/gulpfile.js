@@ -5,7 +5,7 @@ var connect = require('gulp-connect');
 var proxy = require('http-proxy-middleware');
 
 var path = {
-  ALL: ['src/js/*.jsx', 'src/js/**/*.jsx', 'src/index.html'],
+  ALL: ['src/js/*.jsx', 'src/js/**/*.jsx', 'src/index.html', 'src/sass/**/*.scss'],
   HTML: 'src/index.html',
   DEST_SRC: 'dist/src',
   DEST: 'dist',
