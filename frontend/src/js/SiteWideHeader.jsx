@@ -1,17 +1,24 @@
 /*
 The site wide header, with account controls, search bar, icon, logo, and Add a paper button
  */
-import 'bootstrap-sass'
-import 'jquery'
 import React from 'react';
 
 module.exports = React.createClass({
   render: function () {
     return (
-      <div className="row">
-        <div className="col-xs-6">This is a test</div>
-        <div className="col-xs-6">Of bootstrap</div>
-      </div>
+      <nav className="navbar navbar-default" role="navigation">
+        <div className="container">
+          <form className="navbar-form navbar-right">
+            <div className="form-group">
+              <input type="text" className="form-control" placeholder="Search consensus..."/>
+            </div>
+          </form>
+          <ul className="nav navbar-nav navbar-right">
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+        </div>
+      </nav>
     )
   }
 });

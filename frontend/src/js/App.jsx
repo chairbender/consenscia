@@ -8,8 +8,10 @@ import '../sass/main.scss'
 ReactDOM.render(
   <div>
     <SiteWideHeader />
-    <PaperList />
-    <PaperCreator />
+    <div className="container">
+      <PaperList />
+      <PaperCreator />
+    </div>
   </div>,
 
   document.getElementById('app'));
