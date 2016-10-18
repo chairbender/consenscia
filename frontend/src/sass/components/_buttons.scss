@@ -1,0 +1,14 @@
+@import '../base/module';
+
+.btn-gray {
+  @extend .btn-info;
+
+  background-color: $consensus-gray;
+  border-color: $consensus-gray;
+  font-size: 18px;
+}
+
+.btn-gray:hover, .btn-gray:active {
+  background-color: $consensus-green;
+  border-color: $consensus-green;
+}

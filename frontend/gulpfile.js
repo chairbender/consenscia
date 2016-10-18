@@ -5,9 +5,8 @@ var connect = require('gulp-connect');
 var proxy = require('http-proxy-middleware');
 
 var path = {
-  ALL: ['src/js/*.jsx', 'src/js/**/*.jsx', 'src/index.html', 'src/sass/**/*.scss'],
+  ALL: ['src/js/*.jsx', 'src/js/**/*.jsx', 'src/index.html', 'src/sass/**/*.scss', 'src/images/**/*.png'],
   HTML: 'src/index.html',
-  DEST_SRC: 'dist/src',
   DEST: 'dist',
   WEBPACK_ENTRY: 'src/js/App.jsx'
 };
@@ -23,7 +22,7 @@ gulp.task('startConnect', ['build'], function () {
           changeOrigin: true,
           pathRewrite: {
             '^/api' : ''
-          },
+          }
         })
       ]
     }
@@ -33,7 +32,7 @@ gulp.task('startConnect', ['build'], function () {
 gulp.task('transform', function () {
   gulp.src(path.WEBPACK_ENTRY)
     .pipe(webpack(require('./webpack.config.js')))
-    .pipe(gulp.dest(path.DEST_SRC))
+    .pipe(gulp.dest(path.DEST))
     .pipe(connect.reload());
 });
 

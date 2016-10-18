@@ -1,2 +1,12 @@
 @import '../base/module';
-@import '../utils/positioning';
+
+#secondary-header {
+
+  .logo {
+    height: $secondary-header-height;
+  }
+
+  > .row > * {
+    line-height: $secondary-header-height;
+  }
+}

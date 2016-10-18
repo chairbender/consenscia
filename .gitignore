@@ -1,0 +1,7 @@
+/gradle.properties
+.idea
+.gradle
+dist
+node_modules
+*.iml
+build

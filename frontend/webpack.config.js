@@ -17,6 +17,7 @@ module.exports = {
         loaders: ['style', 'css', 'sass']
       },
       { test: /\.json$/, loader: "json-loader"},
+      { test: /\.(jpe?g|png|gif)$/i, loader: 'url?limit=10000!img?progressive=true' },
       {
         test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
         loader: "file"
