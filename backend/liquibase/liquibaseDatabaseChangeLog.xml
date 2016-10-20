@@ -18,6 +18,20 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <createTable tableName="user">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(60)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
         <insert tableName="paper">
             <column name="title" value="Power Posing Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance" />
             <column name="url" value="http://pss.sagepub.com/content/21/10/1363.short" />

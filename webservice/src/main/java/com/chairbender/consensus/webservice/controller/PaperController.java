@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/papers")
 public class PaperController {
     @Autowired
-    private PaperRepository paperRepository;
+    private PaperRepository mPaperRepository;
 
     /**
      *
@@ -25,7 +25,7 @@ public class PaperController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public List<Paper> papers() {
-        return paperRepository.findAll();
+        return mPaperRepository.findAll();
     }
 
     /**
@@ -34,6 +34,6 @@ public class PaperController {
      */
     @RequestMapping(method = RequestMethod.POST)
     public void createPaper(@RequestBody Paper paper) {
-        paperRepository.save(paper);
+        mPaperRepository.save(paper);
     }
 }
