@@ -1,7 +1,7 @@
 import React from 'react';
 import 'fetch';
 
-module.exports = React.createClass({
+export default React.createClass({
   getInitialState: function () {
     return {
       papers: []

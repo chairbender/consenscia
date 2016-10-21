@@ -1,6 +1,6 @@
 var webpack = require("webpack");
 module.exports = {
-  entry: ['./src/js/App.jsx'],
+  entry: ['./src/js/react/App.jsx'],
   devtool: 'source-map',
   output: {
     path: __dirname + "/",

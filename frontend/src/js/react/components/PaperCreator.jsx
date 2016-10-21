@@ -1,7 +1,8 @@
-import React from 'react';
-import 'fetch';
+import React from 'react'
+import Authentication from '../../util/Authentication.jsx'
+import 'fetch'
 
-module.exports = React.createClass({
+export default React.createClass({
   getInitialState: function() {
     return {
       title: '',
@@ -21,7 +22,8 @@ module.exports = React.createClass({
     fetch('/api/papers', {
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': Authentication.authorizationHeaderValue
       },
       method: 'POST',
       body: JSON.stringify(this.state)

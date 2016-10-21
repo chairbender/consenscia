@@ -8,7 +8,7 @@ var path = {
   ALL: ['src/js/*.jsx', 'src/js/**/*.jsx', 'src/index.html', 'src/sass/**/*.scss', 'src/images/**/*.png'],
   HTML: 'src/index.html',
   DEST: 'dist',
-  WEBPACK_ENTRY: 'src/js/App.jsx'
+  WEBPACK_ENTRY: 'src/js/react/App.jsx'
 };
 
 gulp.task('startConnect', ['build'], function () {

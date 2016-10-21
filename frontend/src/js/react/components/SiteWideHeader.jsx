@@ -2,9 +2,10 @@
 The site wide header, with account controls, search bar, icon, logo, and Add a paper button
  */
 import React from 'react';
-import LogoImage from '../images/logo.png';
+import LogoImage from '../../../images/logo.png';
+import { Link } from 'react-router'
 
-module.exports = React.createClass({
+export default React.createClass({
   render: function () {
     return (
       <div>
@@ -16,7 +17,9 @@ module.exports = React.createClass({
               </div>
             </form>
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#">Sign In</a></li>
+              <li>
+                <Link to={"/auth/login"}>Sign In</Link>
+              </li>
               <li><a href="#">Register</a></li>
             </ul>
           </div>
