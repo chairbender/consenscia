@@ -6,13 +6,14 @@ import React from 'react';
 import Authentication from '../../util/Authentication.jsx'
 import 'fetch';
 import { hashHistory } from 'react-router'
+import IconImage from '../../../images/icon-green.png';
 
 export default React.createClass({
   getInitialState: function() {
     return {
       username: '',
       password: '',
-      error: ''
+      error: null
     }
   },
 
@@ -59,14 +60,34 @@ export default React.createClass({
 
   render: function () {
     return (
-        <div class="row">
+        <div className="row">
           <div className="col-xs-4 col-xs-offset-4 login">
-            <p class="error">{this.error}</p>
-            <form onSubmit={this.handleSubmit} className="form-signin">
-                <input type="email" onChange={this.handleUsernameChange} className="form-control" placeholder="Email address" required autofocus/>
-                <input type="password" onChange={this.handlePasswordChange} className="form-control" placeholder="Password" required/>
-                <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            </form>
+            <div className="row">
+              <div className="col-xs-12">
+                <img className="img-responsive center-block" src={IconImage} />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-xs-12">
+                <h1 className="text-center">Sign in to consensus</h1>
+              </div>
+            </div>
+            <div className="row card">
+              <div className="col-xs-12">
+                {this.error && <p className="error">{this.error}</p>}
+                <form onSubmit={this.handleSubmit} className="form-signin">
+                    <div className="formGroup">
+                      <label for="email">Email address</label>
+                      <input id="email" type="email" onChange={this.handleUsernameChange} className="form-control" placeholder="Email address" required autofocus/>
+                    </div>
+                    <div className="password">
+                      <label for="password">Email address</label>
+                      <input type="password" id="password" onChange={this.handlePasswordChange} className="form-control" placeholder="Password" required/>
+                    </div>
+                    <button className="btn btn-lg btn-primary btn-block btn-green" type="submit">Sign in</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
     )

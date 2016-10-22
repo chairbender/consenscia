@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="260.85623"
+   height="50.323898"
+   viewBox="0 0 260.85623 50.323899"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo-green.svg"
+   inkscape:export-filename="C:\Programming\consensus\frontend\src\images\logo-green.png"
+   inkscape:export-xdpi="163.69"
+   inkscape:export-ydpi="163.69">
+  <defs
+     id="defs4">
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5865"
+       id="linearGradient5871"
+       x1="15.926724"
+       y1="1050.6707"
+       x2="25.760952"
+       y2="1023.0493"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.537044,0,0,1.6013481,-20.268416,-623.39487)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5865">
+      <stop
+         style="stop-color:#32c747;stop-opacity:1"
+         offset="0"
+         id="stop5867" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop5869" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="9.0336174"
+     inkscape:cy="64.677259"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer4"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     units="px"
+     showguides="false"
+     fit-margin-top="2"
+     fit-margin-left="2"
+     fit-margin-right="2"
+     fit-margin-bottom="2" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Shape"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(19.935989,-1011.1914)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="15"
+       y="1031.8711"
+       id="text3409"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3411"
+         x="15"
+         y="1031.8711" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="11.741071"
+       y="1036.38"
+       id="text3413"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3415"
+         x="11.741071"
+         y="1036.38" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="98.196259"
+       y="1083.7639"
+       id="text3409-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3411-1"
+         x="98.196259"
+         y="1083.7639" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="94.937317"
+       y="1088.2728"
+       id="text3413-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3415-5"
+         x="94.937317"
+         y="1088.2728" /></text>
+    <path
+       style="fill:url(#linearGradient5871);fill-opacity:1"
+       d="m 4.1591229,1013.1914 -22.0951119,23.3045 22.3695104,23.0194 1.6504825,-1.7405 c -1.3004145,-0.7174 -27.8283529,-16.8798 2.1998568,-40.3223 l 2.7359753,2.8181 -3.0177826,3.1567 c -23.1417334,26.5726 8.9214726,20.2042 12.1485586,19.5109 l 6.378028,-6.7276 z"
+       id="path4366"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="name"
+     style="display:inline"
+     transform="translate(1.947202,-10.0888)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'MS Sans Serif';-inkscape-font-specification:'MS Sans Serif';letter-spacing:0px;word-spacing:0px;fill:#adadad;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="51.069183"
+       y="46.500839"
+       id="text4147"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4149"
+         x="51.069183"
+         y="46.500839">consensus</tspan></text>
+  </g>
+</svg>

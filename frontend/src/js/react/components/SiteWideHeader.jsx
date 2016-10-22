@@ -2,7 +2,7 @@
 The site wide header, with account controls, search bar, icon, logo, and Add a paper button
  */
 import React from 'react';
-import LogoImage from '../../../images/logo.png';
+import LogoImage from '../../../images/logo-green.png';
 import { Link } from 'react-router'
 
 export default React.createClass({
