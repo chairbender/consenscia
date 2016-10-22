@@ -4,9 +4,23 @@ Defines various UI 'sections' (groups of UI elements), like cards
 @import '../base/module';
 
 //intended to be a small container for a small form
-.inverted-page .card {
-  border-radius: 10px;
-  background: $background-color;
-  border: 1px solid #e7e7e7;
-  padding: 10px 10px 20px 10px;
+.inverted-page {
+  .card {
+    border-radius: 10px;
+    background: $background-color;
+    border: 1px solid $container-edge;
+    padding: 10px 10px 20px 10px;
+  }
+
+  .lightweight-card {
+    border-radius: 10px;
+    border: 1px solid $container-edge;
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+  }
 }

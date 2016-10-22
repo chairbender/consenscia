@@ -8,7 +8,7 @@ $text-color: #333;
 //background color on normal pages
 $background-color: #fff;
 
-html * {
+html *:not(a) {
   color: $text-color;
 }
 

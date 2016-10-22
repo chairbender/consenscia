@@ -5,7 +5,7 @@ header value in a cookie.
 import React from 'react';
 import Authentication from '../../util/Authentication.jsx'
 import 'fetch';
-import { hashHistory } from 'react-router'
+import { hashHistory, Link } from 'react-router'
 import IconImage from '../../../images/icon-green.png';
 
 export default React.createClass({
@@ -81,11 +81,16 @@ export default React.createClass({
                       <input id="email" type="email" onChange={this.handleUsernameChange} className="form-control" placeholder="Email address" required autofocus/>
                     </div>
                     <div className="password">
-                      <label for="password">Email address</label>
+                      <label for="password">Password</label>
                       <input type="password" id="password" onChange={this.handlePasswordChange} className="form-control" placeholder="Password" required/>
                     </div>
                     <button className="btn btn-lg btn-primary btn-block btn-green" type="submit">Sign in</button>
                 </form>
+              </div>
+            </div>
+            <div className="row lightweight-card">
+              <div className="col-xs-12 text-center">
+                <p>New? <Link to={"/auth/register"}>Create an account.</Link></p>
               </div>
             </div>
           </div>
