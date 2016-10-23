@@ -4,9 +4,31 @@ The site wide header, with account controls, search bar, icon, logo, and Add a p
 import React from 'react';
 import LogoImage from '../../../images/logo-green.png';
 import { Link } from 'react-router'
+import Webservice from '../../util/Webservice.jsx'
 
 export default React.createClass({
   render: function () {
+    var loggedInCase = (
+      <ul className="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">{Webservice.getLoggedInUsername()}</a>
+        </li>
+        <li>
+          <a href="#">Log Out</a>
+        </li>
+      </ul>
+    );
+
+    var anonymousCase = (
+      <ul className="nav navbar-nav navbar-right">
+        <li>
+          <Link to={"/auth/login"}>Sign In</Link>
+        </li>
+        <li><Link to={"/auth/register"}>Register</Link></li>
+      </ul>
+    )
+
+
     return (
       <div>
         <nav className="navbar navbar-default" role="navigation">
@@ -16,12 +38,7 @@ export default React.createClass({
                 <input type="text" className="form-control" placeholder="Search consensus..."/>
               </div>
             </form>
-            <ul className="nav navbar-nav navbar-right">
-              <li>
-                <Link to={"/auth/login"}>Sign In</Link>
-              </li>
-              <li><a href="#">Register</a></li>
-            </ul>
+            {Webservice.getLoggedInUsername() ? loggedInCase : anonymousCase}
           </div>
         </nav>
         <section id="secondary-header" className="container">

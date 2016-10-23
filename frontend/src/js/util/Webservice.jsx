@@ -77,6 +77,54 @@ export default {
     }.bind(this));
   },
 
+  /*
+  Attempts to register using the provided email and password.
+
+  Returns a promise that may be rejected.
+  The rejection value contains the error message explaining why registration failed.
+  The fulfillment value is true iff registration succeeded.
+  Automatically logs the user in iff registration succeeded.
+  */
+  register: function(email, password) {
+    return fetch('/api/users', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({'email': email, 'password': password})
+    }).then(function(response) {
+      if (!response.ok) {
+        return Promise.reject('Error occurred trying to communicate with the registration service.');
+      } else {
+        return response.json();
+      }
+    }).then(function(registrationMessage) {
+      if (registrationMessage.length == 0) {
+        //store the base-64 encoded string in a cookie for 14 days for
+        //future authenticated calls
+        this._saveCredentialCookie(email, password);
+        return true;
+      } else {
+        return Promise.reject(registrationMessage);
+      }
+    }.bind(this));
+  },
+
+  /*
+  If user is logged in, returns their username. If not, returns null.
+  */
+  getLoggedInUsername: function() {
+    if (document.cookie){
+      var a = document.cookie;
+      var headerValue = a.substring(
+        a.search(this._AUTH_COOKIE_NAME + '=') + this._AUTH_COOKIE_NAME.length + 1);
+      var userPassword = atob(headerValue);
+      return userPassword.split(":")[0];
+    }
+    return null;
+  },
+
   //saves the credentials in a JS cookie for 14 days.
   _saveCredentialCookie: function(username, password) {
     var a = new Date();

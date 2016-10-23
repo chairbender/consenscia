@@ -1,7 +1,9 @@
 package com.chairbender.consensus.webservice.controller;
 
 import com.chairbender.consensus.webservice.bean.LoginAttempt;
+import com.chairbender.consensus.webservice.bean.RegistrationAttempt;
 import com.chairbender.consensus.webservice.entity.User;
+import com.chairbender.consensus.webservice.exception.RegistrationException;
 import com.chairbender.consensus.webservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,11 +25,17 @@ public class UserController {
 
     /**
      *
-     * @return all of the papers in the database
+     *
+     * @return empty string if no error occurred. Otherwise, returns a string explaining what went wrong.
      */
     @RequestMapping(method = RequestMethod.POST)
-    public void registerUser(@RequestBody User pUser) {
-        mUserRepository.save(pUser);
+    public String registerUser(@RequestBody RegistrationAttempt pRegistrationAttempt) {
+        try {
+            pRegistrationAttempt.createUser(mUserRepository,mBCryptPasswordEncoder);
+        } catch (RegistrationException e) {
+            return "\"" + e.getMessage() + "\"";
+        }
+        return "\"\"";
     }
 
     /**
