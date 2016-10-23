@@ -1,5 +1,5 @@
 import React from 'react'
-import Authentication from '../../util/Authentication.jsx'
+import Webservice from '../../util/Webservice.jsx'
 import 'fetch'
 
 export default React.createClass({
@@ -19,12 +19,7 @@ export default React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    fetch('/api/papers', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': Authentication.authorizationHeaderValue
-      },
+    Webservice.authFetch('/api/papers', {
       method: 'POST',
       body: JSON.stringify(this.state)
     })

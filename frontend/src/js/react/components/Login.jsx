@@ -3,8 +3,7 @@ Component for logging in. On success, saves the HTTP Basic
 header value in a cookie.
 */
 import React from 'react';
-import Authentication from '../../util/Authentication.jsx'
-import 'fetch';
+import Webservice from '../../util/Webservice.jsx'
 import { hashHistory, Link } from 'react-router'
 import IconImage from '../../../images/icon-green.png';
 
@@ -26,35 +25,17 @@ export default React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    fetch('/api/users/login', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify(this.state)
-    }).then(function(response) {
-      if (!response.ok) {
-        this.setState({
-          username: '',
-          password: '',
-          error: 'Server error occurred trying to log in.'
-        });
-      } else {
-        return response.json();
-      }
-    }.bind(this)).then(function(loginSuccess) {
-      if (loginSuccess) {
-        //store the base-64 encoded string for authenticating future calls
-        Authentication.setCredentials(this.state.username, this.state.password);
+    Webservice.login(this.state.username,this.state.password)
+    .then(function(success) {
+      if (success) {
         hashHistory.push('/');
-      } else {
-        this.setState({
-          username: '',
-          password: '',
-          error: 'Invalid username / password combination'
-        });
       }
+    }).catch(function(errorMessage) {
+      this.setState({
+        username: '',
+        password: '',
+        error: errorMessage
+      });
     }.bind(this));
   },
 
