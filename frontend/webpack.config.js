@@ -18,10 +18,7 @@ module.exports = {
       },
       { test: /\.json$/, loader: "json-loader"},
       { test: /\.(jpe?g|png|gif)$/i, loader: 'url?limit=10000!img?progressive=true' },
-      {
-        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-        loader: "file"
-      }
+      { test: /\.(woff|woff2|eot|ttf|svg|otf)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=100000' },
     ]
   },
   plugins: [

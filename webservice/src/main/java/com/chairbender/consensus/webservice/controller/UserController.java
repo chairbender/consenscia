@@ -35,7 +35,7 @@ public class UserController {
      * @return true iff the username and password matches a user.
      */
     @RequestMapping("/login")
-    public boolean registerUser(@RequestBody LoginAttempt pLoginAttempt) {
+    public boolean login(@RequestBody LoginAttempt pLoginAttempt) {
         return pLoginAttempt.isValid(mUserRepository,mBCryptPasswordEncoder);
     }
 

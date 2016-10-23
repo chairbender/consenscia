@@ -4,13 +4,8 @@ $consensus-green: #43ce0b;
 $consensus-green-dark: #33a008;
 $header-background: #f8f8f8;
 $container-edge: #e7e7e7;
-$text-color: #333;
 //background color on normal pages
 $background-color: #fff;
-
-html *:not(a) {
-  color: $text-color;
-}
 
 //invert the header and background colors
 body {

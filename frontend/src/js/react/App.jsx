@@ -7,7 +7,6 @@ import React from 'react'
 import '../../sass/main.scss'
 import {Router, Route, IndexRoute, hashHistory } from 'react-router'
 
-
 const HeadlessPage = React.createClass({
   componentWillMount() {
       //invert color on a headless page
@@ -29,7 +28,7 @@ const Page = React.createClass({
   componentWillMount() {
       //restore color on a normal page
       document.body.className = null;
-  }, 
+  },
   render() {
     return (
       <div>
