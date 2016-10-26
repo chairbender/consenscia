@@ -45,7 +45,8 @@ export default {
   },
 
   /*
-  Attempts to login using the provided username and password.
+  Attempts to login using the provided username and password. If
+  successful, updates the logged in user info in the flux store.
 
   Returns a promise that may be rejected.
   The rejection value contains the error message explaining why login failed.

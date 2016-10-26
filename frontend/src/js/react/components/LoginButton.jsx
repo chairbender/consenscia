@@ -12,6 +12,7 @@ onLoginError(errorMessage) - callback to invoke if login fails. errorMessage
 import React from 'react';
 import Webservice from '../../util/Webservice.jsx'
 import { hashHistory } from 'react-router'
+import { connect } from 'react-redux'
 
 
 export default React.createClass({
@@ -28,6 +29,7 @@ export default React.createClass({
     .then(function(success) {
       this.setState({queryPending: false});
       if (success) {
+        this.props.onLoginSuccess(this.props.username,this.props.password);
         hashHistory.push('/');
       }
     }.bind(this)).catch(function(errorMessage) {

@@ -5,7 +5,7 @@ import React from 'react';
 import Webservice from '../../util/Webservice.jsx'
 import { Link } from 'react-router'
 import IconImage from '../../../images/icon-green.png';
-import LoginButton from './LoginButton.jsx'
+import LoginButtonContainer from '../../redux/containers/LoginButtonContainer.jsx'
 
 
 export default React.createClass({
@@ -58,7 +58,7 @@ export default React.createClass({
                       <label for="password">Password</label>
                       <input type="password" id="password" onChange={this.handlePasswordChange} className="form-control" placeholder="Password" required/>
                     </div>
-                    <LoginButton username={this.state.username} password={this.state.password} onLoginError={this.onLoginError}  />
+                    <LoginButtonContainer username={this.state.username} password={this.state.password} onLoginError={this.onLoginError}  />
                 </form>
               </div>
             </div>

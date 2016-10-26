@@ -11,7 +11,7 @@ export default React.createClass({
     var loggedInCase = (
       <ul className="nav navbar-nav navbar-right">
         <li>
-          <a href="#">{Webservice.getLoggedInUsername()}</a>
+          <a href="#">{this.props.username}</a>
         </li>
         <li>
           <a href="#">Log Out</a>
@@ -38,7 +38,7 @@ export default React.createClass({
                 <input type="text" className="form-control" placeholder="Search consensus..."/>
               </div>
             </form>
-            {Webservice.getLoggedInUsername() ? loggedInCase : anonymousCase}
+            {this.props.username ? loggedInCase : anonymousCase}
           </div>
         </nav>
         <section id="secondary-header" className="container">
