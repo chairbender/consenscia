@@ -51,11 +51,11 @@ export default React.createClass({
                 {this.state.error && <p className="alert alert-danger">{this.state.error}</p>}
                 <form className="form-signin">
                     <div className="form-group">
-                      <label for="email">Email address</label>
-                      <input id="email" type="email" onChange={this.handleUsernameChange} className="form-control" placeholder="Email address" required autofocus/>
+                      <label htmlFor="email">Email address</label>
+                      <input id="email" type="email" onChange={this.handleUsernameChange} className="form-control" placeholder="Email address" required />
                     </div>
                     <div className="form-group">
-                      <label for="password">Password</label>
+                      <label htmlFor="password">Password</label>
                       <input type="password" id="password" onChange={this.handlePasswordChange} className="form-control" placeholder="Password" required/>
                     </div>
                     <LoginButtonContainer username={this.state.username} password={this.state.password} onLoginError={this.onLoginError}  />

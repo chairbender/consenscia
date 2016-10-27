@@ -22,9 +22,9 @@ export default React.createClass({
   },
 
   render: function () {
-    var papersList = this.state.papers.map(function(paper) {
+    var papersList = this.state.papers.map(function(paper, i) {
       return (
-        <ul>
+        <ul key={i}>
           <a href={paper.url}>{paper.title}</a>
         </ul>
       );

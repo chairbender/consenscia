@@ -28,9 +28,9 @@ export default React.createClass({
   render: function () {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label for="title">Title</label>
+        <label htmlFor="title">Title</label>
         <input type="text" name="title" onChange={this.handleTitleChange}></input>
-        <label for="title">URL</label>
+        <label htmlFor="title">URL</label>
         <input type="text" name="url" onChange={this.handleURLChange}></input>
         <input type="submit" value="Submit"/>
       </form>

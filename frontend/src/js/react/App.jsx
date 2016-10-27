@@ -23,7 +23,7 @@ const HeadlessPage = React.createClass({
   },
   render() {
     return (
-      <div class="container">
+      <div className="container">
         {this.props.children}
       </div>
     )

@@ -16,6 +16,20 @@ import { hashHistory } from 'react-router'
 
 
 export default React.createClass({
+  propTypes: {
+    //email to use when registering this user. Will
+    //be used as the email and username
+    email: React.PropTypes.string.isRequired,
+    //plaintext password to use for this account
+    password: React.PropTypes.string.isRequired,
+    //for password confirmation. error returned during
+    //registration if this doesn't match password
+    passwordConfirmation: React.PropTypes.string.isRequired,
+    //callback to invoke when registration fails.
+    //passes the failure string as the first argument
+    onRegisterError: React.PropTypes.func    
+  },
+
   getInitialState: function() {
     return {
       queryPending: false

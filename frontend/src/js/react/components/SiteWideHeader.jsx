@@ -7,6 +7,13 @@ import { Link } from 'react-router'
 import Webservice from '../../util/Webservice.jsx'
 
 export default React.createClass({
+  propTypes: {
+    //username to display. If null, the login and
+    //register links are displayed instead of the username
+    //and logout links.
+    username: React.PropTypes.string
+  },
+
   render: function () {
     var loggedInCase = (
       <ul className="nav navbar-nav navbar-right">

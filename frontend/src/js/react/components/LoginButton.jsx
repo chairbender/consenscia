@@ -16,6 +16,18 @@ import { connect } from 'react-redux'
 
 
 export default React.createClass({
+  propTypes: {
+    //function to invoke when login fails
+    onLoginError: React.PropTypes.func,
+    //function to invoke when login succeeds and
+    //credentials have been set
+    onLoginSuccess: React.PropTypes.func,
+    //plaintext username to use when logging in
+    username: React.PropTypes.string.isRequired,
+    //plaintext password to use when logging in
+    password: React.PropTypes.string.isRequired
+  },
+
   getInitialState: function() {
     return {
       queryPending: false
