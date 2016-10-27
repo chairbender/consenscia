@@ -1,0 +1,30 @@
+@import '../base/module';
+//handles styling the paper list
+.paper-list {
+  h1 {
+    padding-bottom: 15px;
+  }
+  .vote-count {
+    .count {
+      @extend .text-center;
+      font-size: 21.5px;
+    }
+  }
+
+  .consensus-pie {
+    .pie {
+      @extend .text-center;
+      svg {
+        height: 25px;
+      }
+    }
+  }
+
+  .sublabel {
+    @extend .text-center;
+    color: $consensus-gray;
+    font-size: 12px;
+  }
+
+
+}

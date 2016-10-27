@@ -15,6 +15,8 @@ public class Paper {
 
     private String title;
     private String url;
+    private int acceptions;
+    private int rejections;
 
     Paper() { // jpa only
 
@@ -22,6 +24,22 @@ public class Paper {
 
     public long getId() {
         return id;
+    }
+
+    public int getAcceptions() {
+        return acceptions;
+    }
+
+    public void setAcceptions(int pAcceptions) {
+        acceptions = pAcceptions;
+    }
+
+    public int getRejections() {
+        return rejections;
+    }
+
+    public void setRejections(int pRejections) {
+        rejections = pRejections;
     }
 
     public String getTitle() {
