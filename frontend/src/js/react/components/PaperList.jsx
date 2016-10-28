@@ -1,6 +1,6 @@
 import React from 'react';
 import 'fetch';
-import PieChart from 'react-simple-pie-chart';
+import Chromath from 'chromath';
 
 export default React.createClass({
   getInitialState: function () {
@@ -26,6 +26,21 @@ export default React.createClass({
 
     var papersList = this.state.papers.map(function(paper, i) {
       var votes = paper.acceptions + paper.rejections;
+      //calculate the boldness and the color of the consensus percentage
+      //based on the percentage
+      var acceptionColor = '#43ce0b';
+      var rejectionColor = '#aaa';
+
+      var acceptanceRatio = paper.acceptions / votes;
+      var acceptancePercent = (acceptanceRatio * 100).toFixed(0);
+      var weight = Math.max((acceptanceRatio * (6)).toFixed(0) * 100,100);
+      var color = Chromath.towards(rejectionColor,acceptionColor,acceptanceRatio);
+
+      var percentStyle = {
+        color: color.toString(),
+        fontWeight: weight.toString()
+      };
+
       return (
         <div key={i}>
           <div className="row paper">
@@ -37,30 +52,19 @@ export default React.createClass({
               </div>
               <div className="row">
                 <div className="col-xs-12 sublabel">
-                  votes
+                  reviews
                 </div>
               </div>
             </div>
-            <div className="col-sm-2 col-xs-2 col-md-2 col-lg-1 consensus-pie">
+            <div className="col-sm-2 col-xs-2 col-md-2 col-lg-1 consensus-percent">
               <div className="row">
-                <div className="col-xs-12 pie">
-                  <PieChart
-                    slices={[
-                      {
-                        color: '#43ce0b',
-                        value: paper.acceptions,
-                      },
-                      {
-                        color: '#aaa',
-                        value: paper.rejections,
-                      }
-                    ]}
-                  />
+                <div className="col-xs-12 percent" style={percentStyle}>
+                  {acceptancePercent}%
                 </div>
               </div>
               <div className="row">
                 <div className="col-xs-12 sublabel">
-                  consensus
+                  confidence
                 </div>
               </div>
             </div>

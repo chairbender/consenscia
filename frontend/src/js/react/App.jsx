@@ -52,7 +52,6 @@ const Home = React.createClass({
     return (
       <div>
         <PaperList />
-        <PaperCreator />
       </div>
     )
   }

@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
+    "chromath": "0.0.7",
     "react-router": "^2.8.1",
     "react-simple-pie-chart": "^0.4.0"
   }
