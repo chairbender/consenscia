@@ -2,13 +2,6 @@
 A registration button, which attempts to register using credentials supplied
 as props and displays a spinner while loading. Redirects to homepage
 on success and logs in. Invokes a callback if an error occurs.
-
-Props:
-email - email address to use to register
-password - plaintext password to use to login
-passwordConfirmation - confirm plaintext password to use to login
-onLoginError(errorMessage) - callback to invoke if register fails. errorMessage
-  is a string describing the exact error.
 */
 import React from 'react';
 import Webservice from '../../util/Webservice.jsx'
@@ -27,7 +20,7 @@ export default React.createClass({
     passwordConfirmation: React.PropTypes.string.isRequired,
     //callback to invoke when registration fails.
     //passes the failure string as the first argument
-    onRegisterError: React.PropTypes.func    
+    onRegisterError: React.PropTypes.func
   },
 
   getInitialState: function() {

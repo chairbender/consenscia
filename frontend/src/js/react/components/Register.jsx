@@ -1,5 +1,5 @@
 /*
-Login form.
+Registration form.
 */
 import React from 'react';
 import Webservice from '../../util/Webservice.jsx'

@@ -1,3 +1,8 @@
+/*
+Displays a list of the newest papers, along with their
+points and a link to their page.
+ */
+
 import React from 'react';
 import 'fetch';
 import Chromath from 'chromath';

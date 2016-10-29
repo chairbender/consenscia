@@ -2,12 +2,6 @@
 A login button, which attempts to login using credentials supplied
 as props and displays a spinner while loading. Redirects to homepage
 on success. Invokes a callback if an error occurs.
-
-Props:
-username - username to use to login
-password - plaintext password to use to login
-onLoginError(errorMessage) - callback to invoke if login fails. errorMessage
-  is a string describing the exact error.
 */
 import React from 'react';
 import Webservice from '../../util/Webservice.jsx'

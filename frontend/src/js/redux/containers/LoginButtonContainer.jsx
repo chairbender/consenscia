@@ -1,3 +1,7 @@
+/*
+Continas the LoginButton, creates a login action when a login
+attempt is made.
+ */
 import { connect } from 'react-redux'
 import { login } from '../actions/index.jsx'
 import LoginButton from '../../react/components/LoginButton.jsx'

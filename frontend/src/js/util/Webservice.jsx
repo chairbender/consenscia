@@ -6,7 +6,7 @@ import 'fetch';
 export default {
   _AUTH_COOKIE_NAME: 'TOKEN',
 
-  /*
+  /**
   Use this for all webservice communication that requires authentication.
   Fetch wrapper. Functions identically to fetch, but provides Authentication
   headers if user's credentials are known. If authentication headers are not
