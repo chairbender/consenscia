@@ -4,7 +4,7 @@ attempt is made.
  */
 import { connect } from 'react-redux'
 import { login } from '../actions/index.jsx'
-import LoginButton from '../../react/components/LoginButton.jsx'
+import LoginButton from '../../react/components/authentication/LoginButton.jsx'
 
 const mapDispatchToProps = (dispatch) => {
   return {
