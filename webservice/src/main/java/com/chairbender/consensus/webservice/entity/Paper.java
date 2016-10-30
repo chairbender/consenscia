@@ -18,7 +18,7 @@ public class Paper {
     private int acceptions;
     private int rejections;
 
-    Paper() { // jpa only
+    public Paper() { // jpa only
 
     }
 

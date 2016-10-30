@@ -20,7 +20,7 @@ public class User implements UserDetails {
     private static final String DEFAULT_ROLE = "USER";
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private String username;
     //bcrypt hash of the actual password
     private String password;
@@ -30,7 +30,7 @@ public class User implements UserDetails {
 
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

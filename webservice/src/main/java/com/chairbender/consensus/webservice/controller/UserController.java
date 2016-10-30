@@ -1,8 +1,7 @@
 package com.chairbender.consensus.webservice.controller;
 
-import com.chairbender.consensus.webservice.bean.LoginAttempt;
-import com.chairbender.consensus.webservice.bean.RegistrationAttempt;
-import com.chairbender.consensus.webservice.entity.User;
+import com.chairbender.consensus.webservice.bean.requestbody.LoginAttempt;
+import com.chairbender.consensus.webservice.bean.requestbody.RegistrationAttempt;
 import com.chairbender.consensus.webservice.exception.RegistrationException;
 import com.chairbender.consensus.webservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

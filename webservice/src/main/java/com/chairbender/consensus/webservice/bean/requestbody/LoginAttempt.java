@@ -1,4 +1,4 @@
-package com.chairbender.consensus.webservice.bean;
+package com.chairbender.consensus.webservice.bean.requestbody;
 
 import com.chairbender.consensus.webservice.entity.User;
 import com.chairbender.consensus.webservice.repository.UserRepository;

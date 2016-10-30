@@ -62,5 +62,19 @@ An argument for multiple comparisons correction" />
             <column name="email" value="kwhipke1@gmail.com" />
             <column name="password" value="$2a$04$CbmDrsPGKrylB6cov4Q36uqlGCJ1XmMkqOFNYw/EgqgyNw0vJ5wOq" />
         </insert>
+        <createTable tableName="review">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="userId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="paperId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accept" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
