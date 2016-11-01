@@ -37,13 +37,23 @@ public class PaperWithUserReview  {
      *      will be null if none submitted by the current user.
      */
     public static PaperWithUserReview getFromPaperForCurrentUser(Paper pPaper, User pCurrentUser, ReviewRepository pInRepository) {
-        List<Review> currentUserReviewList = pInRepository.findByUserIdAndPaperId(pPaper.getId(), pCurrentUser.getId());
-        Review currentUserReview = null;
-        if (!currentUserReviewList.isEmpty()) {
-            currentUserReview = currentUserReviewList.get(0);
-        }
+        Review currentUserReview = pInRepository.findFirstByUserIdAndPaperId(pPaper.getId(), pCurrentUser.getId());;
         return new PaperWithUserReview(currentUserReview,pPaper);
     }
 
+    public Review getReview() {
+        return mReview;
+    }
 
+    public void setReview(Review pReview) {
+        mReview = pReview;
+    }
+
+    public Paper getPaper() {
+        return mPaper;
+    }
+
+    public void setPaper(Paper pPaper) {
+        mPaper = pPaper;
+    }
 }

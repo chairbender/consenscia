@@ -26,6 +26,9 @@ export default {
     //check if authentication is present
     var authValue = this._getSavedAuthValueFromCookie();
     if (authValue) {
+      if (!init) {
+        init = {};
+      }
       init.headers = {
           'Accept': 'application/json',
           'Content-Type': 'application/json',

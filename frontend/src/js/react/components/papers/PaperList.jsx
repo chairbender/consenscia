@@ -6,6 +6,7 @@ points and a link to their page.
 import React from 'react';
 import 'fetch';
 import ConsensusPercentage from './ConsensusPercentage.jsx';
+import { Link } from 'react-router';
 
 export default React.createClass({
   getInitialState: function () {
@@ -60,7 +61,7 @@ export default React.createClass({
               </div>
             </div>
             <div className="col-sm-9 col-xs-9 col-md-9 col-lg-10 title">
-              <a href={paper.url}>{paper.title}</a>
+              <Link to={"/paper/" + paper.id}>{paper.title}</Link>
             </div>
           </div>
           <div className="row">

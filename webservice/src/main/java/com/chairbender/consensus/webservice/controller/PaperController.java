@@ -31,10 +31,6 @@ public class PaperController {
         return mPaperRepository.findAll();
     }
 
-    /**
-     *
-     * @return all of the papers in the database
-     */
     @RequestMapping(method = RequestMethod.POST)
     public void createPaper(@RequestBody Paper paper) {
         mPaperRepository.save(paper);
@@ -42,10 +38,10 @@ public class PaperController {
 
     /**
      *
-     * @return all of the papers in the database
+     * @return the requested paper along with the current user's review of that paper
      */
-    @RequestMapping("/detail")
-    public PaperWithUserReview getPaperWithCurrentUserReview(@RequestParam long pPaperId) {
+    @RequestMapping("/detail/{paperId}")
+    public PaperWithUserReview getPaperWithCurrentUserReview(@PathVariable("paperId") long pPaperId) {
         Paper requestedPaper = mPaperRepository.findOne(pPaperId);
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return PaperWithUserReview.getFromPaperForCurrentUser(requestedPaper, currentUser,mReviewRepository);

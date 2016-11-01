@@ -12,7 +12,7 @@ export default React.createClass({
     /*
     Ratio between 0 and 1 which will be rendered as a percentage.
      */
-    ratio: React.propTypes.number
+    ratio: React.PropTypes.number
   },
 
   render() {

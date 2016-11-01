@@ -1,9 +1,6 @@
 package com.chairbender.consensus.webservice.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Represents a review of a paper by a user
@@ -14,12 +11,26 @@ public class Review {
     @GeneratedValue
     private long id;
 
+    @Column(name = "userId")
     private long userId;
+    @Column(name = "paperId")
     private long paperId;
     private boolean accept;
 
     Review() { // jpa only
 
+    }
+
+    /**
+     *
+     * @param pUserId id of user whose review this is
+     * @param pPaperId id of the paper this review is for
+     * @param pAccept whether the review is an accept or reject
+     */
+    public Review(long pUserId, long pPaperId, boolean pAccept) {
+        userId = pUserId;
+        paperId = pPaperId;
+        accept = pAccept;
     }
 
     public long getId() {
