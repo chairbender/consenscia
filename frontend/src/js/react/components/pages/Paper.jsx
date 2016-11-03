@@ -69,8 +69,8 @@
 
    render() {
      var votes = this.state.paper.acceptions + this.state.paper.rejections;
-     var acceptButtonClass = "btn btn-gray ";
-     var rejectButtonClass = "btn btn-gray ";
+     var acceptButtonClass = "btn btn-gray accept ";
+     var rejectButtonClass = "btn btn-gray reject ";
      var hasAccepted = this.state.review != null && this.state.review.accept;
      var hasRejected = this.state.review != null && !this.state.review.accept;
      if (hasAccepted) {
@@ -84,7 +84,7 @@
        <div className="paper-detail">
          <div className="row">
            <div className="col-xs-12 title">
-             <a href={this.state.paper.url}>{this.state.paper.title}</a>
+             <h1><a href={this.state.paper.url}>{this.state.paper.title}</a></h1>
            </div>
          </div>
          <div className="row summary">
@@ -94,26 +94,23 @@
            </div>
          </div>
          <div className="row votes">
-           <div className="col-xs-2 acceptions">
-             <i className="fa fa-check-circle" aria-hidden="true"></i> {this.state.paper.acceptions}
+           <div className="col-xs-2">
+             <span className="acceptions"><i className="fa fa-check-circle" aria-hidden="true"></i> {this.state.paper.acceptions}</span>
            </div>
-           <div className="col-xs-2 rejections">
-             <i className="fa fa-times-circle" aria-hidden="true"></i> {this.state.paper.rejections}
+           <div className="col-xs-2">
+             <span className="rejections"><i className="fa fa-times-circle" aria-hidden="true"></i> {this.state.paper.rejections}</span>
            </div>
          </div>
          <div className="row user-vote">
            <div className="col-xs-2">
-             Your Review:
-           </div>
-           <div className="col-xs-2 accept">
              <button type="button" onClick={this.handleAccept} className={acceptButtonClass}>
                {hasAccepted && <i className="fa fa-check" aria-hidden="true"></i>} Accept
                {this.state.acceptPending && <i className="fa fa-circle-o-notch fa-spin"></i>}
              </button>
            </div>
-           <div className="col-xs-2 reject">
+           <div className="col-xs-2">
              <button type="button" onClick={this.handleReject} className={rejectButtonClass}>
-               {hasAccepted && <i className="fa fa-times" aria-hidden="true"></i>} Reject
+               {hasRejected && <i className="fa fa-times" aria-hidden="true"></i>} Reject
                {this.state.rejectPending && <i className="fa fa-circle-o-notch fa-spin"></i>}
              </button>
            </div>

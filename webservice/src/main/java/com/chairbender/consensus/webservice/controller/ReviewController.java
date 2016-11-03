@@ -21,6 +21,8 @@ public class ReviewController {
     @Autowired
     private ReviewRepository mReviewRepository;
     @Autowired
+    private PaperRepository mPaperRepository;
+    @Autowired
     private PaperController mPaperController;
 
 
@@ -35,7 +37,8 @@ public class ReviewController {
     }
 
     /**
-     * Updates or sets the current user's review of the paper.
+     * Updates or sets the current user's review of the paper. Also updates the review count in the
+     * paper repository.
      * @param paperId id of paper to review
      * @param accept whether to accept or reject the paper
      * @return the paper details after applying the user's vote
@@ -44,12 +47,20 @@ public class ReviewController {
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         //check if there is an existing review
         Review currentReview = mReviewRepository.findFirstByUserIdAndPaperId(currentUser.getId(), paperId);
+        Paper reviewedPaper = mPaperRepository.findOne(paperId);
         if (currentReview != null) {
-            currentReview.setAccept(accept);
-            mReviewRepository.save(currentReview);
+            boolean priorReview = currentReview.isAccept();
+            if (accept != priorReview) {
+                reviewedPaper.changeReview(accept);
+                currentReview.setAccept(accept);
+                mReviewRepository.save(currentReview);
+                mPaperRepository.save(reviewedPaper);
+            }
         } else {
             Review newReview = new Review(currentUser.getId(),paperId,accept);
+            reviewedPaper.addReview(accept);
             mReviewRepository.save(newReview);
+            mPaperRepository.save(reviewedPaper);
         }
 
         return mPaperController.getPaperWithCurrentUserReview(paperId);

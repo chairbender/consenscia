@@ -57,4 +57,34 @@ public class Paper {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    /**
+     * Indicate that a review has changed from ~pAccept to pAccept. Updates
+     * the corresponding review counts.
+     *
+     * @param pAccept whether the new review is accept or reject
+     */
+    public void changeReview(boolean pAccept) {
+        if (pAccept) {
+            acceptions++;
+            rejections--;
+        } else {
+            rejections++;
+            acceptions--;
+        }
+    }
+
+    /**
+     * Indicate that a new review is submitted for the paper. Updates
+     * the corresponding review count.
+     *
+     * @param pAccept whether the new review is accept or reject
+     */
+    public void addReview(boolean pAccept) {
+        if (pAccept) {
+            acceptions++;
+        } else {
+            rejections++;
+        }
+    }
 }
