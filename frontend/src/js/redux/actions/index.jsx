@@ -7,18 +7,15 @@ Holds the Flux actions for consensus
 */
 
 /**
- * [login Log in to the app and save the logged in username and password to
- use for authenticating further calls and displaying the
- logged in user's name]
+ * [login Log in to the app and save the logged in username for displaying the
+ logged in user's name throughout the site]
  * @param  {string} username username to use
- * @param  {string} password plaintext password to use
  * @return {action}          an action for logging in with the
 *                                specified credentials
  */
-export const login = (username, password) => {
+export const login = (username) => {
   return {
     type: 'LOGIN',
-    username,
-    password
+    username
   }
 }

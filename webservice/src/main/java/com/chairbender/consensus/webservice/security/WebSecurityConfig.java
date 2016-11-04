@@ -54,8 +54,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //enable restricting access based on authentication
                 .authorizeRequests()
-                //only authenticated users can create papers
+                //everything only registered users can do:
+                //create papers
                 .antMatchers(HttpMethod.POST, "/papers").authenticated()
+                //do anything involving reviews
+                .antMatchers("/reviews").authenticated()
                 //all the other endpoints are accessible
                 .anyRequest().permitAll()
                 .and()

@@ -9,7 +9,7 @@ import LoginButton from '../../react/components/authentication/LoginButton.jsx'
 const mapDispatchToProps = (dispatch) => {
   return {
     onLoginSuccess: (username, password) => {
-      dispatch(login(username, password))
+      dispatch(login(username))
     }
   }
 }

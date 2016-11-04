@@ -8,11 +8,10 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import '../../sass/main.scss'
 import {Router, Route, IndexRoute, hashHistory } from 'react-router'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import consensusReducers from '../redux/reducers/index.jsx'
+import ConsensusRedux from '../redux/ConsensusRedux.jsx'
 
-let store = createStore(consensusReducers);
+let store = ConsensusRedux.createStore();
 
 ReactDOM.render((
   <Provider store={store}>

@@ -1,0 +1,44 @@
+@import '../base/module';
+
+.paper-detail {
+  font-size: 24px;
+
+  .row {
+    margin-top: 10px;
+  }
+
+  .summary {
+    font-size: 24px;
+  }
+
+  .votes {
+    .acceptions {
+      color: $consensus-green;
+    }
+    .rejections {
+      color: $consensus-purple;
+    }
+  }
+
+  .user-vote {
+    font-size: 16px;
+    line-height: 40px;
+    vertical-align: middle;
+
+    .accept.selected {
+      background-color: $consensus-green;
+      border-color: $consensus-green;
+    }
+
+    .reject.selected {
+      background-color: $consensus-purple;
+      border-color: $consensus-purple;
+    }
+
+    .reject.btn-gray:hover, .reject.btn-gray:active {
+      background-color: $consensus-purple;
+      border-color: $consensus-purple;
+    }
+
+  }
+}

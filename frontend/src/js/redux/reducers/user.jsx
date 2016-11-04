@@ -5,8 +5,7 @@ const consensusReducer = (state = {}, action) => {
     case 'LOGIN':
       //store the saved plaintext username and password
       return {
-        username: action.username,
-        password: action.password
+        username: action.username
       }
 
     default:
