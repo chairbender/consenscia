@@ -81,6 +81,14 @@ export default {
     }.bind(this));
   },
 
+/**
+ * Logs the user out, clearing the cookie that stores the user's
+ * credentials.
+ */
+  logout: function() {
+    this._deleteAllCookies();
+  },
+
   /*
   Attempts to register using the provided email and password.
 
@@ -149,5 +157,16 @@ export default {
       return 'Basic ' + headerValue;
     }
     return null;
-  }
+  },
+
+  _deleteAllCookies: function() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+    	var cookie = cookies[i];
+    	var eqPos = cookie.indexOf("=");
+    	var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+}
 }

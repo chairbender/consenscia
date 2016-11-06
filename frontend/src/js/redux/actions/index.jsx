@@ -19,3 +19,12 @@ export const login = (username) => {
     username
   }
 }
+
+/**
+ * Clear the saved credentials from the store
+ */
+export const logout = () => {
+  return {
+    type: 'LOGOUT'
+  }
+}

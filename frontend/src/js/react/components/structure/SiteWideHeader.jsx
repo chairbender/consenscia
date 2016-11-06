@@ -12,7 +12,16 @@ export default React.createClass({
     //username to display. If null, the login and
     //register links are displayed instead of the username
     //and logout links.
-    username: React.PropTypes.string
+    username: React.PropTypes.string,
+    //function to invoke when logout succeeds and
+    //credential cookie has been cleared
+    onLogoutSuccess: React.PropTypes.func
+  },
+
+  handleLogout: function(e) {
+    e.preventDefault();
+    Webservice.logout();
+    this.props.onLogoutSuccess();
   },
 
   render: function () {
@@ -22,7 +31,7 @@ export default React.createClass({
           <a href="#">{this.props.username}</a>
         </li>
         <li>
-          <a href="#">Log Out</a>
+          <a href="#" onClick={this.handleLogout}>Log Out</a>
         </li>
       </ul>
     );
@@ -52,7 +61,7 @@ export default React.createClass({
         <section id="secondary-header" className="container">
           <div className="row">
               <div className="pull-left col-xs-6">
-                <img src={LogoImage} className="logo"/>
+                <Link to={"/"}><img src={LogoImage} className="logo"/></Link>
               </div>
               <div className="col-xs-6">
                 <button type="button" className="btn btn-gray">Add a Paper</button>

@@ -37,7 +37,7 @@ public class PaperWithUserReview  {
      *      will be null if none submitted by the current user.
      */
     public static PaperWithUserReview getFromPaperForCurrentUser(Paper pPaper, User pCurrentUser, ReviewRepository pInRepository) {
-        Review currentUserReview = pInRepository.findFirstByUserIdAndPaperId(pPaper.getId(), pCurrentUser.getId());;
+        Review currentUserReview = pInRepository.findFirstByUserIdAndPaperId(pCurrentUser.getId(),pPaper.getId());;
         return new PaperWithUserReview(currentUserReview,pPaper);
     }
 

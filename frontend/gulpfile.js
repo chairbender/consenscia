@@ -3,6 +3,7 @@ var babel = require('gulp-babel');
 var webpack = require('webpack-stream');
 var connect = require('gulp-connect');
 var proxy = require('http-proxy-middleware');
+var plumber = require('gulp-plumber');
 
 var path = {
   ALL: ['src/js/*.jsx', 'src/js/**/*.jsx', 'src/index.html', 'src/sass/**/*.scss', 'src/images/**/*.png', 'src/fonts/**/*'],
@@ -31,6 +32,7 @@ gulp.task('startConnect', ['build'], function () {
 
 gulp.task('transform', function () {
   gulp.src(path.WEBPACK_ENTRY)
+    .pipe(plumber())
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest(path.DEST))
     .pipe(connect.reload());

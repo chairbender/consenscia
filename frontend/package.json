@@ -54,6 +54,7 @@
   "dependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
     "chromath": "0.0.7",
+    "gulp-plumber": "^1.1.0",
     "react-router": "^2.8.1",
     "react-simple-pie-chart": "^0.4.0"
   }

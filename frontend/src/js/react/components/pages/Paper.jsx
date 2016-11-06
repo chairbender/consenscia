@@ -34,8 +34,7 @@
    componentDidMount: function() {
      //get the specific paper from the webservice along
      //with the user's rating status for that paper
-     //TODO: Allow if not logged in
-     Webservice.authFetch('/api/papers/detail/' + this.props.params.paperId)
+     fetch('/api/papers/detail/' + this.props.params.paperId)
      .then(function (response) {
        return response.json()
      }).then(function(data) {

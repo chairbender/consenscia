@@ -7,6 +7,11 @@ const consensusReducer = (state = {}, action) => {
       return {
         username: action.username
       }
+    case 'LOGOUT':
+      //clear the stored credentials
+      return {
+        username: null
+      }
 
     default:
       return state
