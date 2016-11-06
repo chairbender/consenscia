@@ -31,13 +31,16 @@ public class PaperWithUserReview  {
     /**
      *
      * @param pPaper paper whose details and review for the current user should be retrieved
-     * @param pCurrentUser user whose review should be retrieved
+     * @param pCurrentUser user whose review should be retrieved, null if no user detail should be retrieved
      * @param pInRepository repository in which reviews should be searched
      * @return a paper with user review with pPaper and the review for the current user (if any). Review
      *      will be null if none submitted by the current user.
      */
     public static PaperWithUserReview getFromPaperForCurrentUser(Paper pPaper, User pCurrentUser, ReviewRepository pInRepository) {
-        Review currentUserReview = pInRepository.findFirstByUserIdAndPaperId(pCurrentUser.getId(),pPaper.getId());;
+        Review currentUserReview = null;
+        if (pCurrentUser != null) {
+            currentUserReview = pInRepository.findFirstByUserIdAndPaperId(pCurrentUser.getId(), pPaper.getId());
+        }
         return new PaperWithUserReview(currentUserReview,pPaper);
     }
 

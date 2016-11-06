@@ -6,6 +6,7 @@ import com.chairbender.consensus.webservice.entity.User;
 import com.chairbender.consensus.webservice.repository.PaperRepository;
 import com.chairbender.consensus.webservice.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +44,12 @@ public class PaperController {
     @RequestMapping("/detail/{paperId}")
     public PaperWithUserReview getPaperWithCurrentUserReview(@PathVariable("paperId") long pPaperId) {
         Paper requestedPaper = mPaperRepository.findOne(pPaperId);
-        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        //check if they're logged in. If so, provide the user's vote info along with the response
+        User currentUser = null;
+        if (!(SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken)) {
+            currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        }
+
         return PaperWithUserReview.getFromPaperForCurrentUser(requestedPaper, currentUser,mReviewRepository);
     }
 }
