@@ -56,7 +56,7 @@ export default React.createClass({
               </div>
               <div className="row">
                 <div className="col-xs-12 sublabel">
-                  confidence
+                  {votes > 0 && 'confidence'}
                 </div>
               </div>
             </div>

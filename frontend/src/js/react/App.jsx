@@ -4,6 +4,7 @@ import HeadlessPage from './components/structure/HeadlessPage.jsx';
 import Page from './components/structure/Page.jsx';
 import Home from './components/pages/Home.jsx';
 import Paper from './components/pages/Paper.jsx';
+import AddPaper from './components/pages/AddPaper.jsx';
 import ReactDOM from 'react-dom'
 import React from 'react'
 import '../../sass/main.scss'
@@ -22,6 +23,7 @@ ReactDOM.render((
       </Route>
       <Route path="/" component={Page}>
         <IndexRoute component={Home} />
+        <Route path="add-paper" component={AddPaper} />
         <Route path="paper/:paperId" component={Paper} />
       </Route>
     </Router>

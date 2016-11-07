@@ -15,8 +15,8 @@ public class Paper {
 
     private String title;
     private String url;
-    private int acceptions;
-    private int rejections;
+    private int acceptions = 0;
+    private int rejections = 0;
 
     public Paper() { // jpa only
 

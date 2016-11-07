@@ -64,7 +64,7 @@ export default React.createClass({
                 <Link to={"/"}><img src={LogoImage} className="logo"/></Link>
               </div>
               <div className="col-xs-6">
-                <button type="button" className="btn btn-gray">Add a Paper</button>
+                <Link to={"/add-paper"}><button type="button" className="btn btn-gray">Add a Paper</button></Link>                
               </div>
           </div>
         </section>
