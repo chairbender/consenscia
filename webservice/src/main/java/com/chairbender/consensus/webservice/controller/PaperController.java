@@ -52,4 +52,13 @@ public class PaperController {
 
         return PaperWithUserReview.getFromPaperForCurrentUser(requestedPaper, currentUser,mReviewRepository);
     }
+
+    /**
+     *
+     * @return a list of all papers that contain the string in the query
+     */
+    @RequestMapping("/search/{query}")
+    public List<Paper> getPaperWithCurrentUserReview(@PathVariable("query") String pQuery) {
+        return mPaperRepository.findByTitleContainingIgnoreCase(pQuery);
+    }
 }

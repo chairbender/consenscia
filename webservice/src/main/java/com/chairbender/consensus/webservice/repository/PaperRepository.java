@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface PaperRepository extends JpaRepository<Paper, Long> {
     List<Paper> findAll();
+    List<Paper> findByTitleContainingIgnoreCase(String query);
     Paper save(Paper toSave);
+
 }

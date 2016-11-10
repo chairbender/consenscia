@@ -4,7 +4,7 @@ and Add a paper button
  */
 import React from 'react';
 import LogoImage from '../../../../images/logo-green.png';
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
 import Webservice from '../../../util/Webservice.jsx'
 
 export default React.createClass({
@@ -18,10 +18,26 @@ export default React.createClass({
     onLogoutSuccess: React.PropTypes.func
   },
 
+  getInitialState: function() {
+    return {
+      searchQuery: ''
+    }
+  },
+
   handleLogout: function(e) {
     e.preventDefault();
     Webservice.logout();
     this.props.onLogoutSuccess();
+  },
+
+  handleSearchQueryChanged: function(e) {
+    e.preventDefault();
+    this.setState({searchQuery: e.target.value});
+  },
+
+  handleSearch: function(e) {
+    e.preventDefault();
+    hashHistory.push('/search/' + this.state.searchQuery);
   },
 
   render: function () {
@@ -50,9 +66,9 @@ export default React.createClass({
       <div>
         <nav className="navbar navbar-default" role="navigation">
           <div className="container">
-            <form className="navbar-form navbar-right">
+            <form className="navbar-form navbar-right" onSubmit={this.handleSearch}>
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search consensus..."/>
+                <input onChange={this.handleSearchQueryChanged} type="text" className="form-control" placeholder="Search consensus..."/>
               </div>
             </form>
             {this.props.username ? loggedInCase : anonymousCase}
@@ -64,7 +80,7 @@ export default React.createClass({
                 <Link to={"/"}><img src={LogoImage} className="logo"/></Link>
               </div>
               <div className="col-xs-6">
-                <Link to={"/add-paper"}><button type="button" className="btn btn-gray">Add a Paper</button></Link>                
+                <Link to={"/add-paper"}><button type="button" className="btn btn-gray">Add a Paper</button></Link>
               </div>
           </div>
         </section>

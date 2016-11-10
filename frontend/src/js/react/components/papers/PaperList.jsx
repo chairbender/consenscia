@@ -1,6 +1,5 @@
 /*
-Displays a list of the newest papers, along with their
-points and a link to their page.
+Displays a list of papers.
  */
 
 import React from 'react';
@@ -9,28 +8,19 @@ import ConsensusPercentage from './ConsensusPercentage.jsx';
 import { Link } from 'react-router';
 
 export default React.createClass({
-  getInitialState: function () {
-    return {
-      papers: []
-    }
-  },
-
-  componentDidMount: function() {
-    //get the list of papers
-    //from the webservice
-    fetch('/api/papers')
-    .then(function (response) {
-      return response.json()
-    }).then(function(papers) {
-      this.setState({
-        papers: papers
-      })
-    }.bind(this));
+  propTypes: {
+    //array of papers to render
+    papers: React.PropTypes.arrayOf(React.PropTypes.shape({
+      id: React.PropTypes.number,
+      url: React.PropTypes.string,
+      title: React.PropTypes.string,
+      acceptions: React.PropTypes.number,
+      rejections: React.PropTypes.number
+    }))
   },
 
   render: function () {
-
-    var papersList = this.state.papers.map(function(paper, i) {
+    var papersList = this.props.papers.map(function(paper, i) {
       var votes = paper.acceptions + paper.rejections;
 
       return (
@@ -74,11 +64,6 @@ export default React.createClass({
     });
     return (
       <div className="paper-list">
-        <div className="row">
-          <div className="col-xs-12">
-            <h1>Latest Papers</h1>
-          </div>
-        </div>
         {papersList}
       </div>
     )
