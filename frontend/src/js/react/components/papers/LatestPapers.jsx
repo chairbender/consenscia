@@ -17,7 +17,7 @@ export default React.createClass({
   componentDidMount: function() {
     //get the list of papers
     //from the webservice
-    fetch('/api/papers')
+    fetch('/api/papers/latest')
     .then(function (response) {
       return response.json()
     }).then(function(papers) {

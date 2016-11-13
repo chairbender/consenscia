@@ -10,6 +10,8 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -25,15 +27,16 @@ public class PaperController {
 
     /**
      *
-     * @return all of the papers in the database
+     * @return the 10 latest papers in the database
      */
-    @RequestMapping(method = RequestMethod.GET)
-    public List<Paper> papers() {
-        return mPaperRepository.findAll();
+    @RequestMapping("/latest")
+    public List<Paper> latestPapers() {
+        return mPaperRepository.findFirst10ByOrderByCreatedDesc();
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public void createPaper(@RequestBody Paper paper) {
+        paper.setCreated(Timestamp.from(Instant.now()));
         mPaperRepository.save(paper);
     }
 

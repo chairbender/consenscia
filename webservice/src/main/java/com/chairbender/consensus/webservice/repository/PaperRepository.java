@@ -6,8 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PaperRepository extends JpaRepository<Paper, Long> {
-    List<Paper> findAll();
+    List<Paper> findFirst10ByOrderByCreatedDesc();
     List<Paper> findByTitleContainingIgnoreCase(String query);
+
     Paper save(Paper toSave);
 
 }

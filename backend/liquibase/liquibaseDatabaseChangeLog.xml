@@ -23,12 +23,16 @@
             <column name="rejections" type="int">
                 <constraints nullable="false"/>
             </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
         <insert tableName="paper">
             <column name="title" value="Power Posing Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance" />
             <column name="url" value="http://pss.sagepub.com/content/21/10/1363.short" />
             <column name="acceptions" value="20" />
             <column name="rejections" value="230" />
+            <column name="created" value="2016-11-12T12:30:03" />
         </insert>
         <insert tableName="paper">
             <column name="title" value="Neural correlates of interspecies perspective taking in the post-mortem Atlantic Salmon:
@@ -36,12 +40,14 @@ An argument for multiple comparisons correction" />
             <column name="url" value="http://prefrontal.org/files/posters/Bennett-Salmon-2009.pdf" />
             <column name="acceptions" value="43" />
             <column name="rejections" value="20" />
+            <column name="created" value="2016-11-11T12:30:03" />
         </insert>
         <insert tableName="paper">
             <column name="title" value="Dynamic interactions of Arabidopsis TEN1: stabilizing telomeres in response to heat stress" />
             <column name="url" value="http://www.plantcell.org/content/early/2016/09/07/tpc.16.00408" />
             <column name="acceptions" value="543" />
             <column name="rejections" value="3" />
+            <column name="created" value="2016-11-10T12:30:03" />
         </insert>
         <createTable tableName="user">
             <column name="id" type="int" autoIncrement="true">

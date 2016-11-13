@@ -3,6 +3,8 @@ package com.chairbender.consensus.webservice.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Represents a single paper.
@@ -17,6 +19,7 @@ public class Paper {
     private String url;
     private int acceptions = 0;
     private int rejections = 0;
+    private Timestamp created;
 
     public Paper() { // jpa only
 
@@ -56,6 +59,14 @@ public class Paper {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Timestamp getCreated() {
+        return created;
+    }
+
+    public void setCreated(Timestamp pCreated) {
+        created = pCreated;
     }
 
     /**
