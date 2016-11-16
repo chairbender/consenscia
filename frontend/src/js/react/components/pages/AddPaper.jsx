@@ -46,11 +46,11 @@ export default React.createClass({
             <div className="form-group">
               <label htmlFor="title">Title</label>
               <input type="text" name="title" onChange={this.handleTitleChange} className="form-control"/>
-
+            </div>
             <div className="form-group">
               <label htmlFor="title">URL</label>
               <input type="text" name="url" onChange={this.handleURLChange} className="form-control"/>
-
+            </div>
             <button className="btn btn-lg btn-primary btn-block btn-green" type="submit">Submit {this.state.queryPending && <i className="fa fa-circle-o-notch fa-spin"></i>} </button>
           </form>
         </div>
